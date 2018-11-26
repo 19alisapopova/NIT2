@@ -11,39 +11,71 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container-fluid">
+
+<div class="navbar row bg-white fixed-top">
+    <img class="img-fluid" src="images/dominos-logo.png" alt="logo">
+    <img class="img-fluid float-right mr-5" src="images/shopping-cart.png" alt="cart">
+</div>
 
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="images/carousel-pepperoni.jpg" alt="pepperoni">
-            </div>
-
-            <div class="item">
-                <img src="images/carousel-five-cheeses.jpg" alt="5cheeses">
-            </div>
-
-            <div class="item">
-                <img src="images/carousel-cheese-crust.jpg" alt="crust">
-            </div>
+    <div class="carousel-inner text-center margin-start">
+        <div class="carousel-item active">
+            <img class="w-100 carousel-image" src="images/carousel-pepperoni.jpg" alt="pepperoni">
         </div>
 
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <div class="carousel-item">
+            <img class="w-100 carousel-image" src="images/carousel-five-cheeses.jpg" alt="5cheeses">
+        </div>
+
+        <div class="carousel-item">
+            <img class="w-100 carousel-image" src="images/carousel-cheese-crust.jpeg" alt="crust">
+        </div>
     </div>
+
+    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+
+<div class="navbar bg-dark sticky-top sticky-offset justify-content-center">
+        <ul class="text-uppercase font-weight-bold text-white" id="navbarCategories">
+
+        </ul>
+</div>
+
+<div class="productGrid">
+
+<div class="categoryArea">
+    <div class="categoryName">
+        Пицца: Классические
+    </div>
+    <div class="jumbotron text-center">
+            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
+                <img src="images/pizza-pepperoni-blues.png" class="img-fluid jumb-image rounded-image">
+            </div>
+            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
+                <img src="images/pizza-toni-pepperoni.png" class="img-fluid jumb-image rounded-image">
+            </div>
+            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
+                <img src="images/pizza-hawaian.png" class="img-fluid jumb-image rounded-image">
+            </div>
+            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
+                <img src="images/pizza-barbeque.png" class="img-fluid jumb-image rounded-image">
+            </div>
+    </div>
+</div>
+
 </div>
 
 

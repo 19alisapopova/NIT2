@@ -1,4 +1,47 @@
-.page-header{
-  height: 250px; !important;
-    margin-bottom: 2px; !important;
+body{
+    height: 8540px !important;
+}
+
+.navbar {
+    min-height: 270px;
+}
+
+.sticky-offset{
+    top: 270px !important;
+    margin-bottom: 100px !important;
+}
+.carousel-min-height{
+    min-height: 400px;
+}
+
+.margin-start{
+    margin-top: 270px;
+}
+
+.categoryName{
+    font-size: 60px !important;
+    font-weight: bolder;
+    margin-left: 40px;
+}
+
+.categoryArea{
+    margin-left: 60px !important;
+}
+
+.jumbotron{
+    background-color: white !important;
+}
+
+.jumb-image{
+    width: 500px;
+}
+
+.rounded-image{
+    border-radius: 4% !important;
+}
+
+.sticky-list-item{
+    font-size: 40px !important;
+    margin-right: 20px;
+    margin-left: 20px;
 }
