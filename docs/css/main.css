@@ -1,47 +1,59 @@
-body{
-    height: 8540px !important;
-}
 
 .navbar {
     min-height: 270px;
 }
 
-.sticky-offset{
+.sticky-offset {
     top: 270px !important;
     margin-bottom: 100px !important;
 }
-.carousel-min-height{
+
+.carousel-min-height {
     min-height: 400px;
 }
 
-.margin-start{
+.margin-start {
     margin-top: 270px;
 }
 
-.categoryName{
+.categoryName {
     font-size: 60px !important;
     font-weight: bolder;
     margin-left: 40px;
 }
 
-.categoryArea{
+.categoryArea {
     margin-left: 60px !important;
 }
 
-.jumbotron{
+.jumbotron {
     background-color: white !important;
 }
 
-.jumb-image{
-    width: 500px;
+.jumb-image {
+    height: 300px !important;
 }
 
-.rounded-image{
+.rounded-image {
     border-radius: 4% !important;
 }
 
-.sticky-list-item{
+.sticky-list-item {
     font-size: 40px !important;
     margin-right: 20px;
     margin-left: 20px;
+}
+
+.old-price {
+    text-decoration: red !important;
+    text-decoration-line: line-through !important;
+}
+
+.new-price{
+    color: red !important;
+}
+
+.jumb-product-container{
+    width: 550px !important;
+    height: 700px !important;
 }

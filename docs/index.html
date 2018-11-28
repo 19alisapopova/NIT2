@@ -8,13 +8,13 @@
     <meta name="viewport" content="width = device-width, initial-scale = 1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Title</title>
+    <title> DOMINOS </title>
 </head>
 <body>
 
 <div class="navbar row bg-white fixed-top">
-    <img class="img-fluid" src="images/dominos-logo.png" alt="logo">
-    <img class="img-fluid float-right mr-5" src="images/shopping-cart.png" alt="cart">
+    <a href="#"> <img class="img-fluid" src="images/dominos-logo.png" alt="logo"> </a>
+    <a href="cart.html"> <img class="img-fluid float-right mr-5" src="images/shopping-cart.png" alt="cart"> </a>
 </div>
 
 
@@ -48,34 +48,29 @@
 </div>
 
 
-<div class="navbar bg-dark sticky-top sticky-offset justify-content-center">
+<div class="navbar bg-dark sticky-top sticky-offset justify-content-center text-center">
+    <div class="dropdown">
         <ul class="text-uppercase font-weight-bold text-white" id="navbarCategories">
+            <button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+               <h1> PRODUCTS </h1>
+                <span class="caret"></span>
+             </button>
+            <ul class="dropdown-menu text-center ml-2 mr-5" id = "myDropdown">
 
+            </ul>
         </ul>
-</div>
-
-<div class="productGrid">
-
-<div class="categoryArea">
-    <div class="categoryName">
-        Пицца: Классические
-    </div>
-    <div class="jumbotron text-center">
-            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
-                <img src="images/pizza-pepperoni-blues.png" class="img-fluid jumb-image rounded-image">
-            </div>
-            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
-                <img src="images/pizza-toni-pepperoni.png" class="img-fluid jumb-image rounded-image">
-            </div>
-            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
-                <img src="images/pizza-hawaian.png" class="img-fluid jumb-image rounded-image">
-            </div>
-            <div class="jumbotron mr-5 ml-5 list-inline-item list-inline">
-                <img src="images/pizza-barbeque.png" class="img-fluid jumb-image rounded-image">
-            </div>
     </div>
 </div>
 
+
+<div id="productGrid">
+
+</div>
+
+
+<div class="navbar row bg-danger text-center justify-content-center">
+   <h1 class="font-weight-bold p-4 border border-dark rounded">  DEVELOPED BY ALISA POPOVA  </h1>
 </div>
 
 
@@ -90,4 +85,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>
