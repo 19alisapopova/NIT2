@@ -70,7 +70,7 @@ $(document).on("click", "button", function () {
         }
     }
 });
-$(document).on("click", "a", function () {
+$(document).on("click", "button", function () {
     var id = $(this).attr("id");
     if (id == "cartToggle") {
         var s = "";
@@ -147,6 +147,76 @@ $(document).on("click", "button", function () {
         cart = [];
     }
 });
+$(document).on("click", "a", function () {
+    var id = $(this).attr("id");
+    var numbers = (id + "").split("-");
+    var n1 = numbers[0];
+    var n2 = numbers[1];
+    if (n1 == 1){
+        $.ajax({
+            url: 'https://nit.tron.net.ua/api/product/list/',
+            method: 'get',
+            dataType: 'json',
+            success: function (json) {
+                console.log('Loaded via AJAX!');
+                object = json[n2];
+                var s = "";
+                s += "<div class='modal-dialog modal-dialog-centered'>" +
+                    "<div class='modal-content text-center'>" +
+                    "<div class='modal-body m-5'>" +
+                    "<h1 class='text-uppercase font-weight-bold text-center'>" + object.name + "</h1>" +
+                    "<img src='" + object.image_url + "' class='img-fluid jumb-image rounded-image m-5'>" +
+                    "<h2>" + object.description + "</h2>";
+                if (object.special_price != null) {
+                    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + object.price + "</h2>" +
+                        "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + object.special_price + "</h2> </div>";
+                } else {
+                    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4'>" + object.price + "</h2> </div>";
+                }
+                s += "<button class='btn btn-danger mt-4 btn-lg' id='" + 1 + n2 + "'>" + "<h1> КУПИТЬ </h1>" + "</button> </div>" +
+                    "<div class='modal-footer'>" +
+                    "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
+                    "</div>" + "</div>" + "</div>";
+                $(document.getElementById("product-page")).html(s);
+            },
+            error: function (xhr) {
+                alert("An error occured: " + xhr.status + " " + xhr.statusText);
+            },
+        });
+    } else {
+        $.ajax({
+            url: 'https://nit.tron.net.ua/api/product/list/category/' + n1,
+            method: 'get',
+            dataType: 'json',
+            success: function (json) {
+                console.log('Loaded via AJAX!');
+                object = json[n2];
+                var s = "";
+                s += "<div class='modal-dialog modal-dialog-centered'>" +
+                    "<div class='modal-content text-center'>" +
+                    "<div class='modal-body m-5'>" +
+                    "<h1 class='text-uppercase font-weight-bold text-center'>" + object.name + "</h1>" +
+                    "<img src='" + object.image_url + "' class='img-fluid jumb-image rounded-image m-5'>" +
+                    "<h2>" + object.description + "</h2>";
+                if (object.special_price != null) {
+                    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + object.price + "</h2>" +
+                        "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + object.special_price + "</h2> </div>";
+                } else {
+                    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4'>" + object.price + "</h2> </div>";
+                }
+                s += "<button class='btn btn-danger mt-4 btn-lg' id='" + n1 + n2 + "'>" + "<h1> КУПИТЬ </h1>" + "</button> </div>" +
+                    "<div class='modal-footer'>" +
+                    "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
+                    "</div>" + "</div>" + "</div>";
+                $(document.getElementById("product-page")).html(s);
+            },
+            error: function (xhr) {
+                alert("An error occured: " + xhr.status + " " + xhr.statusText);
+            },
+        });
+    }
+})
+
 
 function getAllCategories() {
     $.ajax({
@@ -204,26 +274,9 @@ function getProducts(category) {
                 s += "<div class='jumbotron text-center'>";
                 for (var i in json) {
                     s += "<div class='jumbotron jumb-product-container mr-5 ml-5 list-inline-item list-inline'>" +
-                        "<a data-toggle='modal' href='#" + category + i + "modal' class='text-dark'>" +
+                        "<a data-toggle='modal' href='#product-page' class='text-dark' id='" + category + "-" + i + "'>" +
                         "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image'>" +
-                        "<h1 class='font-weight-bold mt-4'>" + json[i].name + "</h1>" + "</a>";
-                    s += "<div class='modal fade' role='dialog' id='" + category + i + "modal'>" +
-                        "<div class='modal-dialog modal-dialog-centered'>" +
-                        "<div class='modal-content text-center'>" +
-                        "<div class='modal-body m-5'>" +
-                        "<h1 class='text-uppercase font-weight-bold text-center'>" + json[i].name + "</h1>" +
-                        "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image m-5'>" +
-                        "<h2>" + json[i].description + "</h2>";
-                    if (json[i].special_price != null) {
-                        s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + json[i].price + "</h2>" +
-                            "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + json[i].special_price + "</h2> </div>";
-                    } else {
-                        s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4'>" + json[i].price + "</h2> </div>";
-                    }
-                    s += "<button class='btn btn-danger mt-4 btn-lg' id='" + 1 + i + "'>" + "<h1> КУПИТЬ </h1>" + "</button> </div>" +
-                        "<div class='modal-footer'>" +
-                        "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
-                        "</div>" + "</div>" + "</div>" + "</div>";
+                        "<h1 class='font-weight-bold mt-4'>" + json[i].name + "</h1> </a>";
                     if (json[i].special_price != null) {
                         s += "<h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + json[i].price + "</h2>" +
                             "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + json[i].special_price + "</h2>";
@@ -233,7 +286,6 @@ function getProducts(category) {
                     s += "<button class='btn btn-dark mt-4 btn-lg btn-block' id='" + category + i + "'>" + "КУПИТЬ" + "</button>" + " </div>";
                 }
                 s += "</div>";
-                //console.log(s);
                 $(document.getElementById("productGrid").insertAdjacentHTML("beforeend", s));
             },
             error: function (xhr) {
@@ -251,26 +303,9 @@ function getProducts(category) {
                 s += "<div class='jumbotron text-center'>";
                 for (var i in json) {
                     s += "<div class='jumbotron jumb-product-container mr-5 ml-5 list-inline-item list-inline'>" +
-                        "<a data-toggle='modal' href='#" + category + i + "modal' class='text-dark'>" +
+                        "<a data-toggle='modal' href='#product-page' class='text-dark' id='" + category + "-" + i + "'>" +
                         "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image'>" +
-                        "<h1 class='font-weight-bold mt-4'>" + json[i].name + "</h1>" + "</a>";
-                    s += "<div class='modal fade' role='dialog' id='" + category + i + "modal'>" +
-                        "<div class='modal-dialog modal-dialog-centered'>" +
-                        "<div class='modal-content text-center'>" +
-                        "<div class='modal-body m-5'>" +
-                        "<h1 class='text-uppercase font-weight-bold text-center'>" + json[i].name + "</h1>" +
-                        "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image m-5'>" +
-                        "<h2>" + json[i].description + "</h2>";
-                    if (json[i].special_price != null) {
-                        s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + json[i].price + "</h2>" +
-                            "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + json[i].special_price + "</h2> </div>";
-                    } else {
-                        s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4'>" + json[i].price + "</h2> </div>";
-                    }
-                    s += "<button class='btn btn-danger mt-4 btn-lg' id='" + 1 + i + "'>" + "<h1> КУПИТЬ </h1>" + "</button> </div>" +
-                        "<div class='modal-footer'>" +
-                        "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
-                        "</div>" + "</div>" + "</div>" + "</div>";
+                        "<h1 class='font-weight-bold mt-4'>" + json[i].name + "</h1> </a>";
                     if (json[i].special_price != null) {
                         s += "<h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + json[i].price + "</h2>" +
                             "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + json[i].special_price + "</h2>";
@@ -280,7 +315,6 @@ function getProducts(category) {
                     s += "<button class='btn btn-dark mt-4 btn-lg btn-block' id='" + category + i + "'>" + "КУПИТЬ" + "</button>" + " </div>";
                 }
                 s += "</div>";
-               // console.log(s);
                 $(document.getElementById("productGrid").insertAdjacentHTML("beforeend", s));
             },
             error: function (xhr) {
@@ -290,6 +324,24 @@ function getProducts(category) {
     }
 }
 
+
+/*s += "<div class='modal fade' role='dialog' id='" + category + i + "modal'>" +
+    "<div class='modal-dialog modal-dialog-centered'>" +
+    "<div class='modal-content text-center'>" +
+    "<div class='modal-body m-5'>" +
+    "<h1 class='text-uppercase font-weight-bold text-center'>" + json[i].name + "</h1>" +
+    "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image m-5'>" +
+    "<h2>" + json[i].description + "</h2>";
+if (json[i].special_price != null) {
+    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + json[i].price + "</h2>" +
+        "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + json[i].special_price + "</h2> </div>";
+} else {
+    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4'>" + json[i].price + "</h2> </div>";
+}
+s += "<button class='btn btn-danger mt-4 btn-lg' id='" + 1 + i + "'>" + "<h1> КУПИТЬ </h1>" + "</button> </div>" +
+    "<div class='modal-footer'>" +
+    "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
+    "</div>" + "</div>" + "</div>" + "</div>";*/
 
 
 

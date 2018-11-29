@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72fac734-a264-4edf-b4d2-c22ac464e70b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/cart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/product.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -35,7 +32,7 @@
           <entry key="css" value="14" />
           <entry key="html" value="8" />
           <entry key="jpg" value="3" />
-          <entry key="js" value="323" />
+          <entry key="js" value="340" />
           <entry key="json" value="2" />
           <entry key="png" value="5" />
           <entry key="scss" value="5" />
@@ -48,7 +45,7 @@
           <entry key="HTML" value="8" />
           <entry key="Image" value="8" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="323" />
+          <entry key="JavaScript" value="340" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="5" />
         </counts>
@@ -56,16 +53,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="593" />
-          <entry key="html" value="3120" />
-          <entry key="js" value="5472" />
+          <entry key="html" value="3154" />
+          <entry key="js" value="5698" />
           <entry key="scss" value="76" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="593" />
-          <entry key="HTML" value="3124" />
-          <entry key="JavaScript" value="5468" />
+          <entry key="HTML" value="3158" />
+          <entry key="JavaScript" value="5694" />
           <entry key="SCSS" value="76" />
         </counts>
       </usages-collector>
@@ -76,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-268">
-              <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+            <state relative-caret-position="510">
+              <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -85,14 +82,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="139" column="44" lean-forward="true" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+            <state relative-caret-position="67">
+              <caret line="179" column="67" lean-forward="true" selection-start-line="179" selection-start-column="67" selection-end-line="179" selection-end-column="67" />
               <folding>
                 <element signature="e#197#332#0" />
                 <element signature="e#381#2281#0" />
                 <element signature="e#596#1402#0" />
                 <element signature="e#1441#2261#0" />
                 <element signature="e#2325#4566#0" />
+                <element signature="e#4614#5945#0" />
                 <element signature="n#!!block;n#getAllCategories#0" />
                 <element signature="e#5990#6758#0" />
                 <element signature="n#!!block;n#getCategory#0" />
@@ -118,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/docs/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
-              <caret line="38" column="91224" selection-start-line="38" selection-start-column="91224" selection-end-line="38" selection-end-column="91224" />
+              <caret line="38" column="91727" selection-start-line="38" selection-start-column="91727" selection-end-line="38" selection-end-column="91727" />
             </state>
           </provider>
         </entry>
@@ -269,16 +267,15 @@
       <updated>1542536983838</updated>
       <workItem from="1542536985570" duration="10363000" />
       <workItem from="1542798485832" duration="97249000" />
-      <workItem from="1543509727413" duration="13212000" />
+      <workItem from="1543509727413" duration="19083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120824000" />
+    <option name="totallyTimeSpent" value="126695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="24" y="23" width="1305" height="812" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -375,34 +372,35 @@
     <entry file="file://$PROJECT_DIR$/dist/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="56" selection-end-line="38" selection-end-column="91216" />
+          <caret column="56" selection-end-line="38" selection-end-column="91719" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
-          <caret line="38" column="91224" selection-start-line="38" selection-start-column="91224" selection-end-line="38" selection-end-column="91224" />
+          <caret line="38" column="91727" selection-start-line="38" selection-start-column="91727" selection-end-line="38" selection-end-column="91727" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-268">
-          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        <state relative-caret-position="510">
+          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="139" column="44" lean-forward="true" selection-start-line="139" selection-start-column="44" selection-end-line="139" selection-end-column="44" />
+        <state relative-caret-position="67">
+          <caret line="179" column="67" lean-forward="true" selection-start-line="179" selection-start-column="67" selection-end-line="179" selection-end-column="67" />
           <folding>
             <element signature="e#197#332#0" />
             <element signature="e#381#2281#0" />
             <element signature="e#596#1402#0" />
             <element signature="e#1441#2261#0" />
             <element signature="e#2325#4566#0" />
+            <element signature="e#4614#5945#0" />
             <element signature="n#!!block;n#getAllCategories#0" />
             <element signature="e#5990#6758#0" />
             <element signature="n#!!block;n#getCategory#0" />
