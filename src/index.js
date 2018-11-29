@@ -10,6 +10,7 @@ var object;
 getAllCategories();
 getProducts(1);
 
+
 $(document).on("click", "button", function () {
     var n = $(this).attr("id");
     console.log(n);
@@ -80,7 +81,7 @@ $(document).on("click", "button", function () {
             "<h1 class='text-uppercase font-weight-bold text-center m-5'> корзина </h1>";
         for (var f = 0; f < cart.length; f++) {
             s += "<div class='mb-5 ml-5 mr-5'> <h2 class='text-uppercase font-weight-bold d-inline-block'> \> " + cart[f].obj.name + " --> (" + cart[f].counter + "шт.)" + "</h2>";
-            s += "</div>"
+            s += "</div>";
         }
         if (cart.length == 0) s += "<h2 class='text-uppercase font-weight-bold m-5'> корзина пуста. </h2>";
         var money = 0;
@@ -108,7 +109,7 @@ $(document).on("click", "button", function () {
         s += "<div class='modal-footer m-5'>" +
             "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ</button>" +
             "</div> </div> </div> </div>";
-        $(document.getElementById("cart")).html(s);
+        $(document.getElementById("myModal")).html(s);
     }
 })
 $(document).on("click", "button", function () {
@@ -123,6 +124,10 @@ $(document).on("click", "button", function () {
         }
         if(!name.val() || !phone.val() || !email.val()){
             alert("Заполните все необходимые поля!");
+            return;
+        }
+        if(!validateEmail(email.val())){
+            alert("Введите корректный e-mail!");
             return;
         }
         var postData = "name=" + name.val() + "&email=" + email.val() + "&phone=" + phone.val();
@@ -177,7 +182,7 @@ $(document).on("click", "a", function () {
                     "<div class='modal-footer'>" +
                     "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
                     "</div>" + "</div>" + "</div>";
-                $(document.getElementById("product-page")).html(s);
+                $(document.getElementById("myModal")).html(s);
             },
             error: function (xhr) {
                 alert("An error occured: " + xhr.status + " " + xhr.statusText);
@@ -208,7 +213,7 @@ $(document).on("click", "a", function () {
                     "<div class='modal-footer'>" +
                     "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
                     "</div>" + "</div>" + "</div>";
-                $(document.getElementById("product-page")).html(s);
+                $(document.getElementById("myModal")).html(s);
             },
             error: function (xhr) {
                 alert("An error occured: " + xhr.status + " " + xhr.statusText);
@@ -274,7 +279,7 @@ function getProducts(category) {
                 s += "<div class='jumbotron text-center'>";
                 for (var i in json) {
                     s += "<div class='jumbotron jumb-product-container mr-5 ml-5 list-inline-item list-inline'>" +
-                        "<a data-toggle='modal' href='#product-page' class='text-dark' id='" + category + "-" + i + "'>" +
+                        "<a data-toggle='modal' href='#myModal' class='text-dark' id='" + category + "-" + i + "'>" +
                         "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image'>" +
                         "<h1 class='font-weight-bold mt-4'>" + json[i].name + "</h1> </a>";
                     if (json[i].special_price != null) {
@@ -303,7 +308,7 @@ function getProducts(category) {
                 s += "<div class='jumbotron text-center'>";
                 for (var i in json) {
                     s += "<div class='jumbotron jumb-product-container mr-5 ml-5 list-inline-item list-inline'>" +
-                        "<a data-toggle='modal' href='#product-page' class='text-dark' id='" + category + "-" + i + "'>" +
+                        "<a data-toggle='modal' href='#myModal' class='text-dark' id='" + category + "-" + i + "'>" +
                         "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image'>" +
                         "<h1 class='font-weight-bold mt-4'>" + json[i].name + "</h1> </a>";
                     if (json[i].special_price != null) {
@@ -324,24 +329,11 @@ function getProducts(category) {
     }
 }
 
-
-/*s += "<div class='modal fade' role='dialog' id='" + category + i + "modal'>" +
-    "<div class='modal-dialog modal-dialog-centered'>" +
-    "<div class='modal-content text-center'>" +
-    "<div class='modal-body m-5'>" +
-    "<h1 class='text-uppercase font-weight-bold text-center'>" + json[i].name + "</h1>" +
-    "<img src='" + json[i].image_url + "' class='img-fluid jumb-image rounded-image m-5'>" +
-    "<h2>" + json[i].description + "</h2>";
-if (json[i].special_price != null) {
-    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4 old-price'>" + json[i].price + "</h2>" +
-        "<h2 class='font-weight-bold mt-4 d-inline-block ml-4 new-price'>" + json[i].special_price + "</h2> </div>";
-} else {
-    s += "<div><h2 class='font-weight-bold mt-4 d-inline-block mr-4'>" + json[i].price + "</h2> </div>";
+function validateEmail(email) {
+    if (email.length == 0) return false;
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
+    return re.test(email);
 }
-s += "<button class='btn btn-danger mt-4 btn-lg' id='" + 1 + i + "'>" + "<h1> КУПИТЬ </h1>" + "</button> </div>" +
-    "<div class='modal-footer'>" +
-    "<button type='button' class='btn btn-default btn-block' data-dismiss='modal'> ЗАКРЫТЬ </button>" +
-    "</div>" + "</div>" + "</div>" + "</div>";*/
 
 
 

@@ -12,18 +12,27 @@
 </head>
 <body>
 
-<div class='modal fade' role='dialog' id='product-page'>
 
-</div>
-
-<div class='modal fade' role='dialog' id='cart'>
-
+<div class='modal fade' role='dialog' id='myModal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Welcome to Dominos!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <div class="navbar row bg-white fixed-top">
     <img class="img-fluid" src="images/dominos-logo.png" alt="logo">
-    <button data-toggle='modal' data-target="#cart" id="cartToggle" class="btn btn-link"> <img class="img-fluid float-right mr-5"
+    <button data-toggle='modal' data-target="#myModal" id="cartToggle" class="btn btn-link"> <img class="img-fluid float-right mr-5"
                                                               src="images/shopping-cart.png" alt="cart"> </button>
 
 </div>
