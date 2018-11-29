@@ -1,11 +1,13 @@
 
 .navbar {
-    min-height: 270px;
+    min-height: 270px !important;
+    max-height: 270px !important;
 }
 
 .sticky-offset {
     top: 270px !important;
     margin-bottom: 100px !important;
+    min-height: 200px !important;
 }
 
 .carousel-min-height {
@@ -56,4 +58,21 @@
 .jumb-product-container{
     width: 550px !important;
     height: 700px !important;
+}
+
+.jumb-product-page{
+    max-width: 1500px;
+}
+
+.modal-dialog{
+    position: relative;
+    display: table; /* This is important */
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+    min-width: 50%;
+}
+
+hr{
+    height: 2px;
 }

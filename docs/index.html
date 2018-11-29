@@ -12,9 +12,15 @@
 </head>
 <body>
 
+<div class='modal fade' role='dialog' id='cart'>
+
+</div>
+
 <div class="navbar row bg-white fixed-top">
-    <a href="#"> <img class="img-fluid" src="images/dominos-logo.png" alt="logo"> </a>
-    <a href="cart.html"> <img class="img-fluid float-right mr-5" src="images/shopping-cart.png" alt="cart"> </a>
+    <img class="img-fluid" src="images/dominos-logo.png" alt="logo">
+    <a data-toggle='modal' href="#cart" id="cartToggle"> <img class="img-fluid float-right mr-5"
+                                                              src="images/shopping-cart.png" alt="cart"> </a>
+
 </div>
 
 
@@ -53,10 +59,10 @@
         <ul class="text-uppercase font-weight-bold text-white" id="navbarCategories">
             <button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMenu"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-               <h1> PRODUCTS </h1>
+                <h1> PRODUCTS </h1>
                 <span class="caret"></span>
-             </button>
-            <ul class="dropdown-menu text-center ml-2 mr-5" id = "myDropdown">
+            </button>
+            <ul class="dropdown-menu text-center ml-2 mr-5" id="myDropdown">
 
             </ul>
         </ul>
@@ -64,13 +70,13 @@
 </div>
 
 
-<div id="productGrid">
-
+<div id="productGrid" class="m-5">
+    <div class="categoryName"> Category: All </div>
 </div>
 
 
 <div class="navbar row bg-danger text-center justify-content-center">
-   <h1 class="font-weight-bold p-4 border border-dark rounded">  DEVELOPED BY ALISA POPOVA  </h1>
+    <h1 class="font-weight-bold p-4 border border-dark rounded"> DEVELOPED BY ALISA POPOVA </h1>
 </div>
 
 
